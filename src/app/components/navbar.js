@@ -1,38 +1,92 @@
 'use client';
 
 import Link from 'next/link';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../globals.css'; // Add this if styles are in globals
+import '../globals.css';
+
+const NAV_LINKS = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
+];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="navbar bg-light px-4 py-2 shadow-sm">
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        
-        {/* Brand */}
-        <Link className="navbar-brand d-flex align-items-center" href="/">
-          <img src="/trust-logo.png" alt="Logo" width="30" height="30" className="me-2" />
-          MWM Trust
+    <header className="site-header">
+      <div className="nav-wrap">
+        <Link className="brand-mark" href="/" onClick={() => setOpen(false)}>
+          <img src="/trust-logo.png" alt="MWM Trust logo" width="34" height="34" />
+          <span>
+            MWM Trust
+            <span className="brand-sub">Mission Word Movement</span>
+          </span>
         </Link>
 
-        {/* Nav Links */}
-        <ul className="navbar-nav d-flex flex-row gap-4 mb-0">
-          <li className="nav-item"><Link className="nav-link" href="/">Home</Link></li>
-          <li className="nav-item"><Link className="nav-link" href="/about">About</Link></li>
-          <li className="nav-item"><Link className="nav-link" href="/services">Services</Link></li>
-          <li className="nav-item"><Link className="nav-link" href="/projects">Projects</Link></li>
-          <li className="nav-item"><Link className="nav-link" href="/contact">Contact</Link></li>
+        <ul className="nav-links">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href}>{link.label}</Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Social & Donate */}
-        <div className="d-flex align-items-center gap-3">
-          <a href="https://wa.me/919597894420" target="_blank" rel="noopener noreferrer" className="text-dark"><i className="bi bi-whatsapp fs-5"></i></a>
-          <a href="tel:+916374357008" className="text-dark"><i className="bi bi-telephone fs-5"></i></a>
-          <a href="mailto:mwmtrust2016@gmail.com" className="text-dark"><i className="bi bi-envelope fs-5"></i></a>
-          <Link href="/donate" className="btn btn-primary btn-sm">Donate</Link>
+        <div className="nav-actions">
+          <a
+            href="https://wa.me/919597894420"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-icon"
+            aria-label="WhatsApp"
+          >
+            <i className="bi bi-whatsapp"></i>
+          </a>
+          <a href="tel:+916374357008" className="nav-icon" aria-label="Call">
+            <i className="bi bi-telephone"></i>
+          </a>
+          <Link href="/donate" className="btn-donate desktop-only">
+            Donate
+          </Link>
+
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className={`nav-toggle ${open ? 'open' : ''}`}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
-    </nav>
+
+      <div className={`mobile-panel ${open ? 'open' : ''}`}>
+        {NAV_LINKS.map((link) => (
+          <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            {link.label}
+          </Link>
+        ))}
+        <Link href="/donate" className="btn-donate" onClick={() => setOpen(false)}>
+          Donate
+        </Link>
+        <div className="mobile-contact">
+          <a href="https://wa.me/919597894420" target="_blank" rel="noopener noreferrer" className="nav-icon">
+            <i className="bi bi-whatsapp"></i>
+          </a>
+          <a href="tel:+916374357008" className="nav-icon">
+            <i className="bi bi-telephone"></i>
+          </a>
+          <a href="mailto:mwmtrust2016@gmail.com" className="nav-icon">
+            <i className="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </header>
   );
 }

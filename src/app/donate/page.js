@@ -14,7 +14,7 @@ export default function Donate() {
         <div className="col-md-6">
           <div className="card shadow-lg border-0 rounded-4">
             <div className="card-header bg-primary text-white text-center py-4 rounded-top-4">
-              <h3 className="mb-0"><i className="bi bi-bank me-2"></i>Bank Account Details</h3>
+              <h3 className="mb-0 text-white"><i className="bi bi-bank me-2 text-white"></i>Bank Account Details</h3>
             </div>
             <div className="card-body p-4 p-md-5 bg-light">
               <ul className="list-group list-group-flush fs-5">
