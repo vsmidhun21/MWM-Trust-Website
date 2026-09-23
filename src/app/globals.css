@@ -23,6 +23,15 @@
   --terracotta-dark: #9a4726;
   --line: rgba(34, 29, 22, 0.12);
   --shadow-soft: 0 20px 45px -25px rgba(20, 30, 25, 0.45);
+
+  /* Bootstrap token overrides to enforce brand primary color */
+  --bs-primary: #204740;
+  --bs-primary-rgb: 32, 71, 64;
+  --bs-primary-text-emphasis: #14302b;
+  --bs-primary-bg-subtle: #e4ece9;
+  --bs-primary-border-subtle: #80a39b;
+  --bs-link-color: #204740;
+  --bs-link-hover-color: #14302b;
 }
 
 * {
@@ -71,23 +80,34 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--teal);
-  border-color: var(--teal);
+  background-color: var(--teal) !important;
+  border-color: var(--teal) !important;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: var(--teal-dark);
-  border-color: var(--teal-dark);
+  background-color: var(--teal-dark) !important;
+  border-color: var(--teal-dark) !important;
 }
 
-.text-primary {
+.text-primary,
+[class*="text-primary"] {
   color: var(--teal) !important;
 }
-.bg-primary {
+.bg-primary,
+[class*="bg-primary"] {
   background-color: var(--teal) !important;
 }
-.border-primary {
+.border-primary,
+[class*="border-primary"] {
   border-color: var(--teal) !important;
+}
+
+/* Specific component enforcement for donate page */
+.donate-title {
+  color: var(--teal) !important;
+}
+.donate-card-header {
+  background-color: var(--teal) !important;
 }
 
 .card {
@@ -258,11 +278,24 @@ a {
   font-weight: 500;
   padding: 0.35rem 0;
 }
+.mobile-panel .mobile-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.85rem;
+  margin-top: 0.3rem;
+  border-top: 1px solid var(--line);
+}
 .mobile-panel .mobile-contact {
   display: flex;
+  align-items: center;
   gap: 1.1rem;
-  padding-top: 0.6rem;
-  border-top: 1px solid var(--line);
+}
+.mobile-panel .mobile-donate {
+  padding: 0.45rem 1.25rem;
+  font-size: 0.88rem;
 }
 .mobile-panel.open {
   display: flex;
@@ -834,6 +867,31 @@ a {
 }
 .footer-social a:hover {
   color: var(--marigold);
+}
+
+.footer-credit {
+  max-width: 1240px;
+  margin: 1.4rem auto 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8a9994;
+}
+.footer-credit p {
+  margin: 0 auto;
+  max-width: none;
+  color: #8a9994;
+}
+.footer-credit a {
+  color: var(--marigold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+.footer-credit a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* =========================================================

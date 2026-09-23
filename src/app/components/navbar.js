@@ -72,19 +72,27 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
-        <Link href="/donate" className="btn-donate" onClick={() => setOpen(false)}>
-          Donate
-        </Link>
-        <div className="mobile-contact">
-          <a href="https://wa.me/919597894420" target="_blank" rel="noopener noreferrer" className="nav-icon">
-            <i className="bi bi-whatsapp"></i>
-          </a>
-          <a href="tel:+916374357008" className="nav-icon">
-            <i className="bi bi-telephone"></i>
-          </a>
-          <a href="mailto:mwmtrust2016@gmail.com" className="nav-icon">
-            <i className="bi bi-envelope"></i>
-          </a>
+        <div className="mobile-actions">
+          <div className="mobile-contact">
+            <a
+              href="https://wa.me/919597894420"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-icon"
+              aria-label="WhatsApp"
+            >
+              <i className="bi bi-whatsapp"></i>
+            </a>
+            <a href="tel:+916374357008" className="nav-icon" aria-label="Call">
+              <i className="bi bi-telephone"></i>
+            </a>
+            <a href="mailto:mwmtrust2016@gmail.com" className="nav-icon" aria-label="Email">
+              <i className="bi bi-envelope"></i>
+            </a>
+          </div>
+          <Link href="/donate" className="btn-donate mobile-donate" onClick={() => setOpen(false)}>
+            Donate
+          </Link>
         </div>
       </div>
     </header>
