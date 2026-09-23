@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Smooth hover animations */
+.transition-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Home Container ===== */
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Overlay for dark tint effect */
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Content Area */
+.content-container {
+  z-index: 2;
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Background Image */
+.home-bg {
+  background: url('/bgimg.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px;
+}
+
+/* ===== Navbar Enhancements ===== */
+.navbar {
+  background-color: #fff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar .btn-primary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+}
+
+.navbar a.text-dark {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar a.text-dark:hover {
+  color: #0d6efd;
+  transform: translateY(-2px);
+}
+
+/* ===== Card Hover Effect ===== */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Carousel Styles ===== */
+.carousel-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.carousel-caption {
+  bottom: 25%;
+  text-align: center;
+}
+
+.carousel-caption h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f8f9fa;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption .btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  background-color: #0d6efd;
+  border: none;
+}
+
+.carousel-caption .btn:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+  background-color: #0d6efd;
+}
+.carousel-indicators .active {
+  background-color: #0b5ed7;
+}
+
+/* ===== Responsive Design ===== */
+
+/* For tablets */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .carousel-item img {
+    height: 450px;
+    object-fit: cover;
+  }
+
+  .content-container {
+    padding: 1.5rem;
+  }
+
+  .home-bg {
+    padding: 80px 15px;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .home-container {
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    height: 350px;
+    object-fit: cover;
+    object-position: center top; /* show more top portion if needed */
+  }
+  .content-container {
+    padding: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+    display: block;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .home-bg {
+    padding: 60px 10px;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Carousel text scaling */
+  .carousel-caption {
+    bottom: 20%;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .carousel-caption .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* For very small devices */
+@media (max-width: 480px) {
+  .navbar .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .content-container {
+    padding: 0.8rem;
+  }
+
+  .home-bg {
+    padding: 50px 8px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+  }
+
+   .carousel-item img {
+    height: 300px;
+    object-fit: cover;
+    object-position: center; /* balanced view */
+  }
+
+  .carousel-caption {
+    bottom: 15%;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
