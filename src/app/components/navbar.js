@@ -22,8 +22,8 @@ export default function Navbar() {
         <Link className="brand-mark" href="/" onClick={() => setOpen(false)}>
           <img src="/trust-logo.png" alt="MWM Trust logo" width="34" height="34" />
           <span>
-            MWM Trust
-            <span className="brand-sub">Mission Word Movement</span>
+            Mission Word Movement
+            <span className="brand-sub">Ministries India and Beyond</span>
           </span>
         </Link>
 

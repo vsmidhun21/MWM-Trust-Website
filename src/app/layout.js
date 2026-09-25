@@ -4,9 +4,9 @@ import Navbar from './components/navbar';
 import Footer from './components/Footer';
 
 export const metadata = {
-  title: 'Mission Word Movement Trust | Serving Tamil Nadu\'s Forgotten Communities',
+  title: 'Mission Word Movement Ministries India and Beyond | Serving Tamil Nadu\'s Forgotten Communities',
   description:
-    'MWM Trust is a registered public trust (est. 2016) supporting tribal and nomadic communities across Tamil Nadu with education, healthcare, and livelihood programs. Donate to support our work.',
+    'Mission Word Movement Ministries India and Beyond is a registered public trust (est. 2016) supporting tribal and nomadic communities across Tamil Nadu with education, healthcare, and livelihood programs. Donate to support our work.',
   icons: {
     icon: '/trust-logo.png',
   },

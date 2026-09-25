@@ -41,13 +41,15 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <span className="hero-eyebrow">Registered public trust · Since 2016</span>
-            <h1>Reaching the people everyone else walks past</h1>
+            {/* <span className="hero-eyebrow">Mission Word Movement Ministries India and Beyond</span> */}
+            <span className="hero-eyebrow" style={{ marginTop: '0.5rem', opacity: 0.9 }}>Registered public trust · Since 2016</span>
+            <h1>Preaching the word, Reaching the world</h1>
             <p className="lede">
-              Mission Word Movement Trust stands with tribal and nomadic
-              communities across Tamil Nadu — mountain dwellers, rope
-              performers, basket weavers, street artists and more — through
-              education, healthcare, and a path to honest, dignified work.
+              Mission Word Movement Trust stands with
+              tribal and nomadic communities across Tamil Nadu — mountain
+              dwellers, rope performers, basket weavers, street artists and
+              more — through education, healthcare, and a path to honest,
+              dignified work.
             </p>
             <div className="hero-ctas">
               <Link href="/donate" className="btn-fill">
@@ -205,7 +207,7 @@ export default function HomePage() {
             <blockquote>
               &ldquo;Expect great things from God and attempt great things for God.&rdquo;
             </blockquote>
-            <footer>— Motto, Mission Word Movement Trust</footer>
+            <footer>— Motto, Mission Word Movement Ministries India and Beyond</footer>
           </div>
           <div className="about-copy">
             <h2>Every child is born good</h2>
