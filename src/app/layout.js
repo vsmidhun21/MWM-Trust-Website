@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import Navbar from './components/navbar';
 import Footer from './components/Footer';
-import PoweredByBadge from './components/PoweredByBadge';
 
 export const metadata = {
   title: 'Mission Word Movement Ministries India and Beyond | Serving Tamil Nadu\'s Forgotten Communities',
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <PoweredByBadge />
       </body>
     </html>
   );

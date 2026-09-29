@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PoweredByBadge from './PoweredByBadge';
 
 export default function Footer() {
   return (
@@ -70,16 +71,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-credit">
-        <p className="mb-0">
-          Developed by{' '}
-          <a
-            href="https://midhun-v-s.web.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Midhun
-          </a>
-        </p>
+        <PoweredByBadge />
       </div>
     </footer>
   );
